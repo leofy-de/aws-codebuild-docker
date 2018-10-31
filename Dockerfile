@@ -35,7 +35,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       curl \
       gd \
       zip \
-    && curl -o installer "$composer_url" \
-    #&& echo "$composer_checksum *installer" | shasum –c –a 384 \
-    && php installer --install-dir=/usr/local/bin --filename=composer \
-    && rm -rf /var/lib/apt/lists/*
+    && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
+    && mkdir /run/php \
+    && apt-get remove -y --purge software-properties-common \
+    && apt-get -y autoremove \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
