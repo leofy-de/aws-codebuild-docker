@@ -16,24 +16,20 @@ ENV PATH=$PATH:vendor/bin
 # Install Ubuntu packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
+        gnupg \
+        libcurl4-openssl-dev \
         curl \
         git \
-        libcurl4-openssl-dev \
-        libicu-dev \
-        libmcrypt-dev \
-        libmysqlclient-dev \
-        libpng-dev \
-        mysql-client \
         ruby \
         software-properties-common \
-        zip
+        zip \
     && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+    && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
     && apt-get install -y \
         nodejs \
         yarn \
-    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install \
       curl \
       gd \
