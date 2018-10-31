@@ -6,9 +6,6 @@ FROM php:7.2
 
 MAINTAINER Sebastian Buckpesch <sebastian@buckpesch.io>
 
-ARG composer_checksum=55d6ead61b29c7bdee5cccfb50076874187bd9f21f65d8991d46ec5cc90518f447387fb9f76ebae1fbbacf329e583e30
-ARG composer_url=https://raw.githubusercontent.com/composer/getcomposer.org/ba0141a67b9bd1733409b71c28973f7901db201d/web/installer
-
 # Set environment variables
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV PATH=$PATH:vendor/bin
