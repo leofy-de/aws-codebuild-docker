@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         gnupg \
         libcurl4-openssl-dev \
+        libpng-dev \
         curl \
         git \
         ruby \
