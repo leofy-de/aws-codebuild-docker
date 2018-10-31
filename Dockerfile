@@ -1,7 +1,5 @@
 #############################
-#
 # Docker image to build PHP and JS projects using composer and npm/yarn
-#
 #############################
 
 FROM php:7.2
