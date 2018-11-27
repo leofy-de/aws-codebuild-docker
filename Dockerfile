@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       gd \
       zip \
     && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
-    && yarn global add bower webpack \
+    && yarn global add bower webpack requirejs \
     && mkdir /run/php \
     && apt-get remove -y --purge software-properties-common \
     && apt-get -y autoremove \
