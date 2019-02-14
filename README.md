@@ -4,7 +4,7 @@ Container for building php and JS projects using composer and yarn
 ## Includes
 
 - Bower
-- NodeJS 10
+- NodeJS 8
 - PHP 7.2
 - RequireJS / r.js
 - Webpack
